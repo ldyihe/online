@@ -1,0 +1,7 @@
+spring\Example.class
+com\huilan\aikf\phone\domain\PhoneApp.class
+com\huilan\aikf\phone\controller\PhoneController.class
+com\huilan\aikf\phone\mapper\PhoneAppMapper.class
+com\huilan\aikf\Application.class
+spring\DataSourceConfig.class
+com\huilan\aikf\phone\service\PhoneAppService.class

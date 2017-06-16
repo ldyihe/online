@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.huilan.aikf.phone.mapper.PhoneAppMapper">
+
+	<resultMap id="PhoneAppMap" type="com.huilan.aikf.phone.domain.PhoneApp">
+		<result column="APPID" property="APPID" jdbcType="VARCHAR" />
+		<result column="APPNAME" property="APPNAME" jdbcType="VARCHAR" />
+		<result column="APPTYPE" property="APPTYPE" jdbcType="INTEGER" />
+		<result column="INDUSTRY" property="INDUSTRY" jdbcType="INTEGER" />
+		<result column="CALLBACKURL" property="CALLBACKURL" jdbcType="VARCHAR" />
+		<result column="CALLBACKDESC" property="CALLBACKDESC" jdbcType="VARCHAR" />
+		<result column="ISIVR" property="ISIVR" jdbcType="INTEGER" />
+		<result column="IVRURL" property="IVRURL" jdbcType="VARCHAR" />
+		<result column="ISAGENT" property="ISAGENT" jdbcType="INTEGER" />
+		<result column="ISTTS" property="ISTTS" jdbcType="INTEGER" />
+		<result column="ISDISPLAY" property="ISDISPLAY" jdbcType="INTEGER" />
+		<result column="CUSTNUMBER" property="CUSTNUMBER" jdbcType="VARCHAR" />
+		<result column="RYNUMBER" property="RYNUMBER" jdbcType="VARCHAR" />
+		<result column="DISPLAYNUMBER" property="DISPLAYNUMBER" jdbcType="VARCHAR" />
+		<result column="STATE" property="STATE" jdbcType="INTEGER" />
+		<result column="DEPARTMENT" property="DEPARTMENT" jdbcType="VARCHAR" />
+		<result column="BALANCE" property="BALANCE" jdbcType="DECIMAL" />
+		<result column="INVOICE" property="INVOICE" jdbcType="DECIMAL" />
+		<result column="ISCHECK" property="ISCHECK" jdbcType="INTEGER" />
+		<result column="FILENAME" property="FILENAME" jdbcType="VARCHAR" />
+		<result column="SERVICECHECK" property="SERVICECHECK" jdbcType="INTEGER" />
+		<result column="WEEKLY" property="WEEKLY" jdbcType="VARCHAR" />
+		<result column="BEGINTIME" property="BEGINTIME" jdbcType="VARCHAR" />
+		<result column="ENDTIME" property="ENDTIME" jdbcType="VARCHAR" />
+		<result column="SERVICEID" property="SERVICEID" jdbcType="VARCHAR" />
+		<result column="CREATE_TIME" property="CREATE_TIME" jdbcType="VARCHAR" />
+		<result column="UPDATE_TIME" property="UPDATE_TIME" jdbcType="VARCHAR" />
+		<result column="NOTENOUGHMONEY" property="notenoughmoney"
+			jdbcType="INTEGER" />
+		<result column="NOTSINGRENT" property="notsingrent" jdbcType="INTEGER" />
+		<result column="IS_SERVICE" property="isService" jdbcType="INTEGER" />
+		<result column="MAX_WAIT_TIME" property="maxWaitTime" jdbcType="INTEGER" />
+		<result column="KEY_PRESS_TIMEOUT" property="keyPressTimeout"
+			jdbcType="INTEGER" />
+		<result column="IS_SATISFY_EVAL" property="isSatisfyEval"
+			jdbcType="INTEGER" />
+		<result column="POST_PROCESS_TIME" property="postProcessTime"
+			jdbcType="INTEGER" />
+	</resultMap>
+
+	<sql id="selectSql">
+		SELECT
+		APPID ,
+		APPNAME ,
+		APPTYPE ,
+		INDUSTRY ,
+		CALLBACKURL ,
+		CALLBACKDESC ,
+		ISIVR ,
+		IVRURL ,
+		ISAGENT ,
+		ISTTS ,
+		ISDISPLAY ,
+		CUSTNUMBER ,
+		RYNUMBER ,
+		DISPLAYNUMBER ,
+		STATE ,
+		DEPARTMENT ,
+		BALANCE ,
+		INVOICE ,
+		ISCHECK
+		,
+		FILENAME ,
+		SERVICECHECK ,
+		WEEKLY ,
+		BEGINTIME ,
+		ENDTIME,
+		SERVICEID,
+		CREATE_TIME,
+		UPDATE_TIME,
+		NOTENOUGHMONEY,
+		NOTSINGRENT,
+		IS_SERVICE,
+		MAX_WAIT_TIME,
+		KEY_PRESS_TIMEOUT,
+		IS_SATISFY_EVAL,
+		POST_PROCESS_TIME
+		FROM
+		IKF_PHONE_APP A
+	</sql>
+
+	<select id="get" parameterType="String" resultType="com.huilan.aikf.phone.domain.PhoneApp" resultMap="PhoneAppMap">
+		<include refid="selectSql" />
+		WHERE A.APPID = #{appid}
+	</select>
+	
+</mapper>
