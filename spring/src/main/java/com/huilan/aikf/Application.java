@@ -27,7 +27,7 @@ public class Application{
 	 */
 	@Bean
 	public DataSource getDataSource() throws Exception {
-		Properties props = new Properties();
+		Properties props = new Properties(); 
 		props.put("driverClassName", env.getProperty("jdbc.driverClassName"));
 		props.put("url", env.getProperty("jdbc.url"));
 		props.put("username", env.getProperty("jdbc.username"));
