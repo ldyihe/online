@@ -9,8 +9,8 @@ import org.springframework.core.io.Resource;
 public class Test implements FactoryBean<Object> {
 	
 	public static void main(String[] args) {
-		Resource res = new ClassPathResource("bean.xml"); 
-		BeanFactory factory = new XmlBeanFactory(res);  
+		Resource res = new ClassPathResource("bean.xml");
+		BeanFactory factory = new XmlBeanFactory(res);
 		System.out.println(factory.getBean("factoryBeanOne").getClass());
 		System.out.println(factory.getBean("factoryBeanTwo").getClass());
 	}
